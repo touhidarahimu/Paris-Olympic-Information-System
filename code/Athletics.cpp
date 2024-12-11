@@ -1,5 +1,10 @@
 #include "Athletics.h"
 #include <iostream>
+#include <cstring>
+#include <fstream>
+#include <conio.h>
+#include <algorithm>
+
 using namespace std;
 
 athletics *head = nullptr;
@@ -83,3 +88,59 @@ void insertAthletics(athletics *ath){
         
     }
 }
+
+void updateInfoByCode()
+{
+    system("CLS");
+    string input;
+    cout << "\t\t\tPARIS OLYMPICS INFORMATION SYSTEM\n\n";
+    cout << "\t\t\t   Update Athlete Info by Code\n\n";
+
+    cout << "\nEnter an Code to Update: ";
+    int code;
+    cin >> code;
+
+    athletics *updCur = head;
+    while (updCur != NULL) {
+        if (updCur -> code_number == code) break;
+        updCur = updCur -> next;
+    }
+
+    if (updCur == NULL) {
+        cout << "\n\t\t\tCode was not found!" << endl;
+        cout << "\t\t\tPlease try again..." << endl;
+        getch();
+        updateAthleteInfo(); // Need to write code
+        return;
+    }
+
+    cout << "Athlete Code: " << updCur -> code_number << endl;
+    cout << "\nSerial\t" << "Info" << endl;
+    cout << "1.\t" << "Name\t\t\t: " << updCur -> name << endl;
+
+    if (updCur -> gender == "Not Found Athletics Gender") {
+        cout << "2.\t" << "Gender\t\t\t: " << "Not Given" << endl; 
+    } else {
+        cout << "2.\t" << "Gender\t\t\t: " << updCur -> gender << endl;
+    }
+    if (updCur -> country_code == "Not Found Athletics Country_Code") {
+        cout << "3.\t" << "Country Code\t\t\t: " << "Not Given" << endl; 
+    } else {
+        cout << "3.\t" << "Country Code\t\t\t: " << updCur -> country_code << endl;
+    }
+    if (updCur -> country == "Not Found Athletics Country") {
+        cout << "4.\t" << "Country\t\t\t: " << "Not Given" << endl; 
+    } else {
+        cout << "4.\t" << "Country\t\t\t: " << updCur -> country << endl;
+    }
+    if (updCur -> language == "Not Found Athletics Language") {
+        cout << "5.\t" << "Language\t\t\t: " << "Not Given" << endl; 
+    } else {
+        cout << "5.\t" << "Language\t\t\t: " << updCur -> language << endl;
+    }
+
+// Need to inser update functions - Shaira
+
+}
+
+

@@ -28,6 +28,9 @@ void insertAthletics(int code_number);
 void insertAthletics(athletics *ath);
 void insertAthletics(int code_number,string name);
 
+void updatePartialData();
+void updateInfoByCode();
+
 
 
 

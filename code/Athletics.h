@@ -70,6 +70,9 @@ void inputManipulation();
 void outputManipulation();
 
 
+void updatePartialData();
+void updateInfoByCode();
+
 
 
 
